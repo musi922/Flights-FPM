@@ -49,7 +49,8 @@
       "libs": {
         "sap.m": {},
         "sap.ui.core": {},
-        "sap.fe.core": {}
+        "sap.fe.core": {},
+        "sap.fe.macros": {}
       }
     },
     "contentDensities": {
@@ -81,7 +82,6 @@
       "css": []
     },
     "routing": {
-      "config": {},
       "routes": [
         {
           "name": "TravelMain",
@@ -96,12 +96,16 @@
           "name": "sap.fe.core.fpm",
           "options": {
             "settings": {
-              "navigation": {},
-              "contextPath": "/Travel",
-              "viewName": "com.flights.travel.flightsapp.ext.main.Main"
+              "viewName": "com.flights.travel.flightsapp.ext.main.Main",
+              "contextPath": "/Travel"
             }
           }
         }
+      }
+    },
+    "extends": {
+      "extensions": {
+        "sap.ui.controllerExtensions": {}
       }
     }
   }
