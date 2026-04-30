@@ -2,6 +2,7 @@
     <Page id="Main" title="{i18n&gt;MainTitle}">
         <content>
             <macros:FilterBar id="FilterBar" metaPath="/Travel/@com.sap.vocabularies.UI.v1.SelectionFields"/>
+            <macros:Table id="Table" metaPath="/Travel/@com.sap.vocabularies.UI.v1.LineItem" filterBar="FilterBar" headerVisible="true" isSearchable="true" readOnly="true" selectionMode="Single" type="ResponsiveTable" variantManagement="None"/>
         </content>
     </Page>
 </mvc:View>
