@@ -84,7 +84,6 @@
     },
     "routing": {
       "config": {
-        "routerClass": "sap.f.routing.Router",
         "type": "flexibleColumnLayout"
       },
       "routes": [
