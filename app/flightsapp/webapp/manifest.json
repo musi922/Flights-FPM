@@ -83,11 +83,23 @@
       "css": []
     },
     "routing": {
+      "config": {
+        "routerClass": "sap.f.routing.Router",
+        "type": "flexibleColumnLayout"
+      },
       "routes": [
         {
           "name": "TravelMain",
           "pattern": ":?query:",
           "target": "TravelMain"
+        },
+        {
+          "name": "TravelObjectPage",
+          "pattern": "Travel({key}):?query:",
+          "target": [
+            "TravelMain",
+            "TravelObjectPage"
+          ]
         }
       ],
       "targets": {
@@ -98,6 +110,16 @@
           "options": {
             "settings": {
               "viewName": "com.flights.travel.flightsapp.ext.main.Main",
+              "contextPath": "/Travel"
+            }
+          }
+        },
+        "TravelObjectPage": {
+          "type": "Component",
+          "id": "TravelObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
               "contextPath": "/Travel"
             }
           }
