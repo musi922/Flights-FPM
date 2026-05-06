@@ -129,7 +129,7 @@ class TravelService extends cds.ApplicationService {
     this._update_totals4 = function (travel) {
       return UPDATE(Travel.drafts, travel).with({
         TotalPrice: CXL`coalesce (BookingFee, 0) + ${SELECT`coalesce (sum (FlightPrice + ${SELECT`coalesce (sum (Price),0)`.from(BookingSupplement.drafts).where`to_Booking_BookingUUID = BookingUUID`
-            }),0)`.from(Booking.drafts).where`to_Travel_TravelUUID = TravelUUID`
+          }),0)`.from(Booking.drafts).where`to_Travel_TravelUUID = TravelUUID`
           }`
       })
     }
@@ -347,8 +347,7 @@ class TravelService extends cds.ApplicationService {
               var record = {}
               record.CountFlights = flightsPerAirline.BookedFlights
               record.AirlineID = flightsPerAirline.AirlineID
-              record.to_Customer_CustomerID = each.
-                to_Customer_CustomerID
+              record.to_Customer_CustomerID = each.to_Customer_CustomerID
               record.LastName = each.LastName
               record.Name = airlines.find(obj => obj.AirlineID === flightsPerAirline.AirlineID).Name
               flightsPerCustomer.push(record)

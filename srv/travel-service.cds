@@ -8,8 +8,6 @@ service TravelService @(path:'/processor') {
     action acceptTravel();
   };
 
-  entity Booking as projection on my.Booking;
-
   // Ensure all masterdata entities are available to clients
   annotate my.MasterData with @cds.autoexpose @readonly;
 }
